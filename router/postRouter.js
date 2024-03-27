@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Model = require('../models/postModels');
 
-router.get('/add' , (req, res) => {
+router.post('/add' , (req, res) => {
     res.send('add response from post router');
 });
 

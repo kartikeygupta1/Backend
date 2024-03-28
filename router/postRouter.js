@@ -4,7 +4,15 @@ const Model = require('../models/postModels');
 
 router.post('/add' , (req, res) => {
     console.log(req.body);
-    res.send('add response from post router');
+    new Model(req.body).save()
+    .then((result) => {
+        res.status(200).json(result);
+        
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+        
+    });
 });
 
 router.get('/getall' , (req, res) => {

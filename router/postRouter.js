@@ -3,6 +3,7 @@ const router = express.Router();
 const Model = require('../models/postModels');
 
 router.post('/add' , (req, res) => {
+    console.log(req.body);
     res.send('add response from post router');
 });
 

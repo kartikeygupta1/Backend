@@ -1,6 +1,9 @@
 const express = require('express');
 
-const postRouter = require('./router/postRouter'); // importing 
+const userRouter = require('./router/userRouter'); // importing 
+const postRouter = require('./router/postRouter');
+
+
 
 const cors = require('cors');
 
@@ -13,8 +16,8 @@ app.use(cors({
 }));
 
 app.use(express.json());
-
 app.use('/post', postRouter);
+app.use('/user', userRouter);
 
 app.get('/', (req, res) => {
     res.send('Response From Express')

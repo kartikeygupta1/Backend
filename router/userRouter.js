@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Model = require('../models/postModels');
+const Model = require('../models/userModels');
 
 router.post('/add' , (req, res) => {
     console.log(req.body);
@@ -16,13 +16,7 @@ router.post('/add' , (req, res) => {
 });
 
 router.get('/getall' , (req, res) => {
-    Model.find()
-    .then((result) => {
-        res.status(200).json(result);
-    }).catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    res.send('getall response from post router');
 });
 
 router.get('/delete' , (req, res) => {
